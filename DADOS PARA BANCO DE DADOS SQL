@@ -1,0 +1,64 @@
+MYSQL DADOS
+Copie o codigo abaixo e compile-o no MySQL para que o banco de dados funcione
+
+Usuarios:
+Aluno -> login:111 senha:111
+Professor -> login:222 senha:222
+Coordenador -> login:333 senh:333
+
+
+
+
+
+
+create schema SistemaAcademicoTomas;
+
+use SistemaAcademicoTomas;
+
+create table Usuario
+(
+numero int not null,
+nome varchar(40),
+login varchar(20),
+senha varchar(100),
+perfil varchar(20),
+curso varchar(20),
+titulacao varchar(20),
+primary key (numero),
+unique(login));
+
+create table Disciplina
+(codigo int not null,
+nome varchar(40),
+creditos varchar(100),
+primary key (codigo));
+
+create table Turma
+(identificador int not null,
+semestre int,
+ano int,
+ativa boolean,
+professor int,
+aluno int,
+disciplina int,
+primary key (identificador));
+
+create table Matricula
+(numero int not null,
+identificador int not null,
+nota1 double,
+nota2 double,
+exame int,
+faltas int,
+aprovado boolean,
+primary key(identificador),
+foreign key(numero) references Usuario(numero) on delete restrict on update cascade,
+foreign key(identificador) references Turma(identificador) on delete restrict on update cascade);
+
+insert into usuario values
+(1, 'roberto', '111', '111', 'Aluno', 'mat', null);
+insert into usuario values(2, 'daniel', '222', '222', 'Professor', null, 'ingles');
+insert into usuario values(3, 'Afonso', '333', '333', 'Coordenador', null, null);
+insert into disciplina values(1, 'portugues', 5);
+insert into turma values(1, 2, 1, 5, 12, true, 0);
+insert into matricula values(1, 1, 0, 0, 0, 0, true);
