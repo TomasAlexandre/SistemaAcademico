@@ -1,4 +1,4 @@
-O projeto sistema academico foi feito durante o curso de Analise e Desenvolvimento de Sistemas, com todos os requisitos de como o projeto deveria ser estando em COLOCAR AQUI.
+O projeto sistema academico foi feito durante o curso de Analise e Desenvolvimento de Sistemas, e todos os requisitos de como o projeto deveria ser estão em "documentação SistemaAcademico".
 
 Para executar o projeto basta ter instalado o visual studio e o MySQL, salvar a pasta no computador, ir no visual studio,clicar em abrir projeto e selecionar a pasta.
 No MySQL o usuario é 'root' e a senha é '1234'. Caso queira mudar é apenas ir na pasta Factory => conexao.cs e mudar lá a senha ou usuario.
